@@ -1,25 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import { Route } from 'react-router-dom';
+import PostListPage from './pages/PostListPage';
+import LoginPage from './pages/LoginPage';
+import PostPage from './pages/PostPage';
+import RegisterPage from './pages/RegisterPage';
+import WritePage from './pages/WritePage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Route component={PostListPage} path={['/@:username', '/']} />
+      <Route component={LoginPage} path="/login" />
+      <Route component={PostPage} path="/register" />
+      <Route component={WritePage} path="/write" />
+      <Route component={RegisterPage} path="/@username/:PostId" />
+    </>
   );
 }
-
 export default App;
